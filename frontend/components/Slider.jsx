@@ -247,7 +247,7 @@ export default function Slider({ items = [], theme = 'light' }) {
         >
           <div style={{ position: 'relative', height: '128px', width: '100%', overflow: 'hidden' }}>
             <img
-              src={`http://localhost:5000${items[index]?.image || ''}`}
+               src={`${process.env.NEXT_PUBLIC_API_URL}${items[index]?.image || ''}`}
               alt={items[index]?.headline || 'Slide'}
               style={imageStyle}
               onMouseEnter={(e) => {

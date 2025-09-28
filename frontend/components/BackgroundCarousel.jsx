@@ -8,7 +8,7 @@ export default function BackgroundCarousel() {
   useEffect(() => {
     async function fetchImages() {
       try {
-        const res = await fetch("http://localhost:5000/api/backgrounds");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/backgrounds`);
         const data = await res.json();
         setImages(data.images || []);
       } catch (err) {
@@ -35,7 +35,7 @@ export default function BackgroundCarousel() {
       {images.map((img, i) => (
         <img
           key={i}
-          src={`http://localhost:5000${img.url}`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}${img.url}`}
           alt="Background"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             i === index ? "opacity-100" : "opacity-0"

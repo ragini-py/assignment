@@ -11,7 +11,7 @@ export default function Hero({ theme, onThemeToggle }) {
   useEffect(() => {
     async function fetchSlides() {
       try {
-        const res = await fetch('http://localhost:5000/api/sliders');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sliders`);
         const json = await res.json();
         setSlides(json.sliders || []);
       } catch (err) {

@@ -9,7 +9,7 @@ export default function Footer() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const res = await fetch('http://localhost:5000/api/blogs');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
         const json = await res.json();
         setBlogs(json.blogs || []);
       } catch (err) {
