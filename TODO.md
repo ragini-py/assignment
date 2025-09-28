@@ -1,6 +1,0 @@
-- [x] Update frontend/src/app/api/blogs/route.js to proxy GET to backend
-- [x] Update frontend/src/app/api/contact/route.js to proxy POST to backend
-- [x] Update frontend/src/app/api/sliders/route.js to proxy GET to backend
-- [x] Create frontend/src/app/api/backgrounds/route.js for GET/POST proxy to backend /api/backgrounds
-- [x] Update Hero.jsx to fetch from local /api/sliders instead of external URL
-- [x] Test API integrations between frontend and backend
