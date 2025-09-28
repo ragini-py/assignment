@@ -25,7 +25,7 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      const res = await fetch('http://localhost:5000/api/contacts', {
+      const res = await fetch('https://auren-k0e7.onrender.com/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
