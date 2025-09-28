@@ -9,7 +9,7 @@ export default function Footer() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
+        const res = await fetch("https://auren-k0e7.onrender.com/api/blogs");
         const json = await res.json();
         setBlogs(json.blogs || []);
       } catch (err) {

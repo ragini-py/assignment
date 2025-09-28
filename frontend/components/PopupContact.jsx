@@ -19,7 +19,7 @@ export default function PopupContact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
+      await fetch("https://auren-k0e7.onrender.com/api//contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

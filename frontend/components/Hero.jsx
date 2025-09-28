@@ -11,7 +11,7 @@ export default function Hero({ theme, onThemeToggle }) {
   useEffect(() => {
     async function fetchSlides() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sliders`);
+        const res = await fetch("https://auren-k0e7.onrender.com/api/sliders");
         const json = await res.json();
         setSlides(json.sliders || []);
       } catch (err) {

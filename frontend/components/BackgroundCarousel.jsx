@@ -8,7 +8,7 @@ export default function BackgroundCarousel() {
   useEffect(() => {
     async function fetchImages() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/backgrounds`);
+        const res = await fetch("https://auren-k0e7.onrender.com/api/backgrounds");
         const data = await res.json();
         setImages(data.images || []);
       } catch (err) {
@@ -35,11 +35,10 @@ export default function BackgroundCarousel() {
       {images.map((img, i) => (
         <img
           key={i}
-          src={`${process.env.NEXT_PUBLIC_API_URL}${img.url}`}
+          src={`https://auren-k0e7.onrender.com${img.url}`}
           alt="Background"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            i === index ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"
+            }`}
         />
       ))}
       <div className="absolute inset-0 bg-black/40" /> {/* overlay */}

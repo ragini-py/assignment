@@ -51,8 +51,8 @@ export default function Slider({ items = [], theme = 'light' }) {
     maxWidth: '400px',
     width: '100%',
     textAlign: 'center',
-    boxShadow: theme === 'dark' 
-      ? '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
+    boxShadow: theme === 'dark'
+      ? '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1)'
       : '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
     position: 'relative',
     animation: 'slideIn 0.3s ease-out'
@@ -84,8 +84,8 @@ export default function Slider({ items = [], theme = 'light' }) {
     fontSize: '28px',
     fontWeight: 'bold',
     marginBottom: '16px',
-    background: theme === 'dark' 
-      ? 'linear-gradient(135deg, #60a5fa, #a78bfa)' 
+    background: theme === 'dark'
+      ? 'linear-gradient(135deg, #60a5fa, #a78bfa)'
       : 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
@@ -100,8 +100,8 @@ export default function Slider({ items = [], theme = 'light' }) {
   };
 
   const buttonStyle = {
-    background: theme === 'dark' 
-      ? 'linear-gradient(135deg, #4f46e5, #7c3aed)' 
+    background: theme === 'dark'
+      ? 'linear-gradient(135deg, #4f46e5, #7c3aed)'
       : 'linear-gradient(135deg, #1f2937, #374151)',
     color: '#ffffff',
     border: 'none',
@@ -119,8 +119,8 @@ export default function Slider({ items = [], theme = 'light' }) {
     border: `1px solid ${theme === 'dark' ? '#4b5563' : '#e5e7eb'}`,
     borderRadius: '12px',
     overflow: 'hidden',
-    boxShadow: theme === 'dark' 
-      ? '0 10px 25px rgba(0, 0, 0, 0.3)' 
+    boxShadow: theme === 'dark'
+      ? '0 10px 25px rgba(0, 0, 0, 0.3)'
       : '0 10px 25px rgba(0, 0, 0, 0.1)',
     transition: 'all 0.3s ease'
   };
@@ -158,7 +158,7 @@ export default function Slider({ items = [], theme = 'light' }) {
     border: 'none',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    backgroundColor: isActive 
+    backgroundColor: isActive
       ? (theme === 'dark' ? '#60a5fa' : '#3b82f6')
       : (theme === 'dark' ? 'rgba(156, 163, 175, 0.5)' : 'rgba(255, 255, 255, 0.5)')
   });
@@ -190,13 +190,13 @@ export default function Slider({ items = [], theme = 'light' }) {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: keyframes }} />
-      
-      <div style={{ 
-        position: 'fixed', 
-        bottom: '32px', 
-        right: '32px', 
-        width: '192px', 
-        zIndex: 50 
+
+      <div style={{
+        position: 'fixed',
+        bottom: '32px',
+        right: '32px',
+        width: '192px',
+        zIndex: 50
       }}>
         {/* Start Now Button */}
         <button
@@ -230,24 +230,24 @@ export default function Slider({ items = [], theme = 'light' }) {
         </button>
 
         {/* Slider */}
-        <div 
+        <div
           style={sliderContainerStyle}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = theme === 'dark' 
-              ? '0 15px 35px rgba(0, 0, 0, 0.4)' 
+            e.currentTarget.style.boxShadow = theme === 'dark'
+              ? '0 15px 35px rgba(0, 0, 0, 0.4)'
               : '0 15px 35px rgba(0, 0, 0, 0.15)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = theme === 'dark' 
-              ? '0 10px 25px rgba(0, 0, 0, 0.3)' 
+            e.currentTarget.style.boxShadow = theme === 'dark'
+              ? '0 10px 25px rgba(0, 0, 0, 0.3)'
               : '0 10px 25px rgba(0, 0, 0, 0.1)';
           }}
         >
           <div style={{ position: 'relative', height: '128px', width: '100%', overflow: 'hidden' }}>
             <img
-               src={`${process.env.NEXT_PUBLIC_API_URL}${items[index]?.image || ''}`}
+              src={`https://auren-k0e7.onrender.com${items[index]?.image || ''}`}
               alt={items[index]?.headline || 'Slide'}
               style={imageStyle}
               onMouseEnter={(e) => {
@@ -271,11 +271,11 @@ export default function Slider({ items = [], theme = 'light' }) {
 
         {/* Dot navigation */}
         {len > 1 && (
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            marginTop: '8px', 
-            gap: '4px' 
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '8px',
+            gap: '4px'
           }}>
             {items.map((_, i) => (
               <button
@@ -314,7 +314,7 @@ export default function Slider({ items = [], theme = 'light' }) {
             >
               <X size={20} />
             </button>
-            
+
             <span style={emojiStyle}>🚀</span>
             <h3 style={titleStyle}>Coming Soon!</h3>
             <p style={messageStyle}>
