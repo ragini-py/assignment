@@ -1,0 +1,64 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+/* Default theme */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Global body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+body {
+  cursor: auto;
+}
+
+/* Gradient text utility with standard background-clip */
+.gradient-text {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5, #42e695);
+  background-size: 200% 200%;
+  background-clip: text;           /* Standard property for modern browsers */
+  -webkit-background-clip: text;   /* WebKit fallback */
+  -webkit-text-fill-color: transparent;
+  color: transparent;              /* Ensure fallback */
+  animation: gradientShift 6s ease infinite;
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth fade-in for sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
