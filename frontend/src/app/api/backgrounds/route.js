@@ -1,6 +1,8 @@
+import API_BASE_URL from '../../../config';
+
 export async function GET() {
   try {
-    const res = await fetch('http://localhost:5000/api/backgrounds');
+    const res = await fetch(`${API_BASE_URL}/api/backgrounds`);
     if (!res.ok) {
       throw new Error('Failed to fetch backgrounds');
     }
@@ -35,7 +37,7 @@ export async function POST(request) {
       backendFormData.append(key, value);
     }
 
-    const res = await fetch('http://localhost:5000/api/backgrounds/upload', {
+    const res = await fetch(`${API_BASE_URL}/api/backgrounds/upload`, {
       method: 'POST',
       body: backendFormData,
     });

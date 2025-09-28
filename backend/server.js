@@ -19,7 +19,13 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://assignment-lkkt5ogpv-raginis-projects-af02427c.vercel.app',
+    'http://localhost:3000',
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // serve uploads folder

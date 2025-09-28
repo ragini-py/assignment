@@ -1,7 +1,9 @@
 // app/api/blogs/route.js
+import API_BASE_URL from '../../../config';
+
 export async function GET() {
   try {
-    const res = await fetch('http://localhost:5000/api/blogs');
+    const res = await fetch(`${API_BASE_URL}/api/blogs`);
     if (!res.ok) {
       throw new Error('Failed to fetch blogs');
     }
